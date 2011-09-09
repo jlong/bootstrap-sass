@@ -61,29 +61,58 @@ input[type=radio] {
 }
 
 // Inputs, Textareas, Selects
-input[type=text],
-input[type=password],
+input,
 textarea,
 select,
 .uneditable-input {
   display: inline-block;
   width: 210px;
+  height: $baseline;
   padding: 4px;
   font-size: 13px;
   line-height: $baseline;
-  height: $baseline;
   color: $gray;
   border: 1px solid #ccc;
   @include border-radius(3px);
 }
+
+// mini reset for non-html5 file types
+input[type=checkbox],
+input[type=radio] {
+  width: auto;
+  height: auto;
+  padding: 0;
+  margin: 3px 0;
+  *margin-top: 0; /* IE6-7 */
+  line-height: normal;
+  border: none;
+}
+
+input[type=file] {
+  background-color: #fff;
+  padding: initial;
+  border: initial;
+  line-height: initial;
+  @include box-shadow(none);
+}
+
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  width: auto;
+  height: auto;
+}
+
 select,
 input[type=file] {
   height: $baseline * 1.5;
   line-height: $baseline * 1.5;
 }
+
 textarea {
   height: auto;
 }
+
 .uneditable-input {
   background-color: #eee;
   display: block;
