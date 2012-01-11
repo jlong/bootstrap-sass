@@ -89,7 +89,8 @@ li {
   line-height: $baseline;
   color: $gray;
 }
-ul.unstyled {
+ul.unstyled,
+.unstyled-list {
   list-style: none;
   margin-left: 0;
 }

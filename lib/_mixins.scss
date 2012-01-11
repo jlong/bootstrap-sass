@@ -76,6 +76,30 @@
   @include clearfix();
 }
 .fixed-container { @include fixed-container; }
+@mixin fluid-container {
+  position: relative;
+  min-width: $siteWidth;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include clearfix();
+  > .sidebar {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    width: 220px;
+  }
+  // TODO in v2: rename this and .popover .content to be more specific
+  > .content {
+    margin-left: 240px;
+  }
+}  
+.fluid-container { @include fluid-container; }
+@mixin rwd-container {
+  max-width: $siteWidth;  
+  margin-left: auto;
+  margin-right: auto;
+}      
+.rwd-container { @include rwd-container; }
 @mixin columns($columnSpan: 1) {
   width: ($gridColumnWidth * $columnSpan) + ($gridGutterWidth * ($columnSpan - 1));
 }

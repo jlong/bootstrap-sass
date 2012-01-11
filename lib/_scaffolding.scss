@@ -21,21 +21,11 @@ body {
 
 // Fluid layouts (left aligned, with sidebar, min- & max-width content)
 .container-fluid {
-  position: relative;
-  min-width: 940px;
-  padding-left: 20px;
-  padding-right: 20px;
-  @include clearfix();
-  > .sidebar {
-    position: absolute;
-    top: 0;
-    left: 20px;
-    width: 220px;
-  }
-  // TODO in v2: rename this and .popover .content to be more specific
-  > .content {
-    margin-left: 240px;
-  }
+  @include fluid-container();
+}
+
+.container-rwd {
+  @include rwd-container();
 }
 
 

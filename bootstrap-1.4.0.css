@@ -9,7 +9,7 @@
  *
  * Converted to Sass by @johnwlong.
  *
- * Date: So 13 Nov 2011 16:45:58 CET
+ * Date: Tue Jan 10 21:58:53 EST 2012
  */
 /* Reset.scss
  * Props to Eric Meyer (meyerweb.com) for his CSS reset file. We're using an adapted version here	that cuts out some of the reset HTML elements we will never need here (i.e., dfn, samp, etc).
@@ -184,6 +184,37 @@ textarea {
   clear: both;
 }
 
+.fluid-container {
+  position: relative;
+  min-width: 940px;
+  padding-left: 20px;
+  padding-right: 20px;
+  zoom: 1;
+}
+.fluid-container:before, .fluid-container:after {
+  display: table;
+  content: "";
+  zoom: 1;
+}
+.fluid-container:after {
+  clear: both;
+}
+.fluid-container > .sidebar {
+  position: absolute;
+  top: 0;
+  left: 20px;
+  width: 220px;
+}
+.fluid-container > .content {
+  margin-left: 240px;
+}
+
+.rwd-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /*
  * Scaffolding.scss
  * Basic and global styles for generating a grid system, structural layout, and page templates
@@ -236,6 +267,12 @@ body {
 }
 .container-fluid > .content {
   margin-left: 240px;
+}
+
+.container-rwd {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
@@ -523,7 +560,8 @@ li {
   color: gray;
 }
 
-ul.unstyled {
+ul.unstyled,
+.unstyled-list {
   list-style: none;
   margin-left: 0;
 }
