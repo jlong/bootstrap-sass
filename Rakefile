@@ -16,14 +16,14 @@ BOOTSTRAP_MIN_CSS = "bootstrap-#{VERSION}.min.css"
 SASS_COMMAND = "sass --load-path lib --style"
 
 task BOOTSTRAP_CSS do |target|
-  sh "#{SASS_COMMAND} expanded lib/bootstrap.scss:#{target}"
+  sh "#{SASS_COMMAND} expanded lib/_bootstrap.scss:#{target}"
   css = IO.read(target.to_s)
   css.gsub!('@DATE', `date`.strip)
   File.open(target.to_s, 'w+') { |f| f.write(css) }
 end
 
 task BOOTSTRAP_MIN_CSS do |target|
-  sh "#{SASS_COMMAND} compressed lib/bootstrap.scss:#{target}"
+  sh "#{SASS_COMMAND} compressed lib/_bootstrap.scss:#{target}"
 end
 
 desc "build regular and compresed versions of bootstrap"
