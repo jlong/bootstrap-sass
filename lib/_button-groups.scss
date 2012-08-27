@@ -59,41 +59,41 @@
 // Set corners individual because sometimes a single button can be in a .btn-group and we need :first-child and :last-child to both match
 .btn-group > .btn:first-child {
   margin-left: 0;
-     -webkit-border-top-left-radius: 4px;
-         -moz-border-radius-topleft: 4px;
-             border-top-left-radius: 4px;
-  -webkit-border-bottom-left-radius: 4px;
-      -moz-border-radius-bottomleft: 4px;
-          border-bottom-left-radius: 4px;
+     -webkit-border-top-left-radius: $inputBorderRadius + 1;
+         -moz-border-radius-topleft: $inputBorderRadius + 1;
+             border-top-left-radius: $inputBorderRadius + 1;
+  -webkit-border-bottom-left-radius: $inputBorderRadius + 1;
+      -moz-border-radius-bottomleft: $inputBorderRadius + 1;
+          border-bottom-left-radius: $inputBorderRadius + 1;
 }
 // Need .dropdown-toggle since :last-child doesn't apply given a .dropdown-menu immediately after it
 .btn-group > .btn:last-child,
 .btn-group > .dropdown-toggle {
-     -webkit-border-top-right-radius: 4px;
-         -moz-border-radius-topright: 4px;
-             border-top-right-radius: 4px;
-  -webkit-border-bottom-right-radius: 4px;
-      -moz-border-radius-bottomright: 4px;
-          border-bottom-right-radius: 4px;
+     -webkit-border-top-right-radius: $inputBorderRadius + 1;
+         -moz-border-radius-topright: $inputBorderRadius + 1;
+             border-top-right-radius: $inputBorderRadius + 1;
+  -webkit-border-bottom-right-radius: $inputBorderRadius + 1;
+      -moz-border-radius-bottomright: $inputBorderRadius + 1;
+          border-bottom-right-radius: $inputBorderRadius + 1;
 }
 // Reset corners for large buttons
 .btn-group > .btn.large:first-child {
   margin-left: 0;
-     -webkit-border-top-left-radius: 6px;
-         -moz-border-radius-topleft: 6px;
-             border-top-left-radius: 6px;
-  -webkit-border-bottom-left-radius: 6px;
-      -moz-border-radius-bottomleft: 6px;
-          border-bottom-left-radius: 6px;
+     -webkit-border-top-left-radius: $inputBorderRadius + 3;
+         -moz-border-radius-topleft: $inputBorderRadius + 3;
+             border-top-left-radius: $inputBorderRadius + 3;
+  -webkit-border-bottom-left-radius: $inputBorderRadius + 3;
+      -moz-border-radius-bottomleft: $inputBorderRadius + 3;
+          border-bottom-left-radius: $inputBorderRadius + 3;
 }
 .btn-group > .btn.large:last-child,
 .btn-group > .large.dropdown-toggle {
-     -webkit-border-top-right-radius: 6px;
-         -moz-border-radius-topright: 6px;
-             border-top-right-radius: 6px;
-  -webkit-border-bottom-right-radius: 6px;
-      -moz-border-radius-bottomright: 6px;
-          border-bottom-right-radius: 6px;
+     -webkit-border-top-right-radius: $inputBorderRadius + 3;
+         -moz-border-radius-topright: $inputBorderRadius + 3;
+             border-top-right-radius: $inputBorderRadius + 3;
+  -webkit-border-bottom-right-radius: $inputBorderRadius + 3;
+      -moz-border-radius-bottomright: $inputBorderRadius + 3;
+          border-bottom-right-radius: $inputBorderRadius + 3;
 }
 
 // On hover/focus/active, bring the proper btn to front
@@ -231,14 +231,14 @@
   margin-top: -1px;
 }
 .btn-group-vertical .btn:first-child {
-  @include border-radius(4px 4px 0 0);
+  @include border-radius($inputBorderRadius + 1 4px 0 0);
 }
 .btn-group-vertical .btn:last-child {
-  @include border-radius(0 0 4px 4px);
+  @include border-radius(0 0 $inputBorderRadius + 1 $inputBorderRadius + 1);
 }
 .btn-group-vertical .btn-large:first-child {
-  @include border-radius(6px 6px 0 0);
+  @include border-radius($inputBorderRadius + 3 $inputBorderRadius + 3 0 0);
 }
 .btn-group-vertical .btn-large:last-child {
-  @include border-radius(0 0 6px 6px);
+  @include border-radius(0 0 $inputBorderRadius + 3 $inputBorderRadius + 3);
 }
