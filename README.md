@@ -10,7 +10,7 @@ To get started, checkout http://getbootstrap.com!
 Quick start
 -----------
 
-Clone the repo, `git clone git://github.com/twitter/bootstrap.git`, or [download the latest release](https://github.com/twitter/bootstrap/zipball/master).
+Clone the repo, `git clone git://github.com/jlong/sass-twitter-bootstrap.git`, or [download the latest release](https://github.com/jlong/sass-twitter-bootstrap/zipball/master).
 
 
 
