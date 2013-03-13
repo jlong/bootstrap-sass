@@ -6,6 +6,8 @@
    - Remi Barraquand
  resources:
    - demo.scss
+ languages:
+   - scss
 ...
 */
 
