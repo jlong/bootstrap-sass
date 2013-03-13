@@ -19,6 +19,11 @@ Three quick start options are available:
 * Install with Twitter's [Bower](http://twitter.github.com/bower): `bower install bootstrap`.
 
 
+## SASS: Demos
+
+You will find demos of how to use Sass Bootstrap in the demos directory.
+
+- [How to build fluid dynamic grid with Sass Bootstrap without embedding Bootstrap classes in your HTML!](http://jsfiddle.net/gh/get/mootools/1.4.5/barraq/sass-twitter-bootstrap/tree/master/demos/fluid-grid-demo-1/)
 
 ## SASS: Usage
 
