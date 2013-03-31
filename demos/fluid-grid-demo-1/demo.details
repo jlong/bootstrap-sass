@@ -1,0 +1,14 @@
+/*
+ ---
+ name: Sass Bootstrap - Flui Grid - demo 1
+ description: Demo showing how to build a real responsive grid with Sass Bootstrap without embedding Bootstrap classes in your HTML!
+ authors:
+   - Remi Barraquand
+ resources:
+   - demo.scss
+ languages:
+   - scss
+...
+*/
+
+<p>This demo will show you how to build a real responsive grid with Sass Bootstrap without embedding Bootstrap classes in your HTML!</p>

@@ -638,18 +638,18 @@
 }
 
 @mixin grid-fluid-span($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
-  width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1));
-  *width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%);
+  width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) !important;
+  *width: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%) !important;
 }
 
 @mixin grid-fluid-offset($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
-  margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) + ($fluidGridGutterWidth * 2);
-  *margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%) + ($fluidGridGutterWidth * 2) - (.5 / $gridRowWidth * 100px * 1%);
+  margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) + ($fluidGridGutterWidth * 2) !important;
+  *margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%) + ($fluidGridGutterWidth * 2) - (.5 / $gridRowWidth * 100px * 1%) !important;
 }
 
 @mixin grid-fluid-offset-first-child($columns, $fluidGridColumnWidth, $fluidGridGutterWidth) {
-  margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) + ($fluidGridGutterWidth);
-  *margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%) + $fluidGridGutterWidth - (.5 / $gridRowWidth * 100px * 1%);
+  margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) + ($fluidGridGutterWidth) !important;
+  *margin-left: ($fluidGridColumnWidth * $columns) + ($fluidGridGutterWidth * ($columns - 1)) - (.5 / $gridRowWidth * 100px * 1%) + $fluidGridGutterWidth - (.5 / $gridRowWidth * 100px * 1%) !important;
 }
 
 

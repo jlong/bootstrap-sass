@@ -1,0 +1,38 @@
+@import "../../lib/bootstrap.scss";
+@import "../../lib/responsive.scss";
+
+// body is the fluid containter
+body { @extend .container-fluid; }
+
+// make elements "column fluid"
+#page-body, 
+#page-sidebar {
+    @extend [class*="span"];
+}
+section:not(.main) > section {
+    @extend [class*="span"];
+    @media (max-width: 1199px) { margin-left: 0 !important; }
+}
+
+// make elements "row fluid"
+#page,
+#page > section:not(.main) {
+    @extend .row-fluid;
+}
+
+// responsive grid
+@media (min-width: 768px) and (max-width: 979px) {
+    #page-body { @include grid-fluid-span(7, $fluidGridColumnWidth768, $fluidGridGutterWidth768); }
+    #page-sidebar { @include grid-fluid-span(5, $fluidGridColumnWidth768, $fluidGridGutterWidth768); }
+}
+
+@media (min-width: 980px) and (max-width: 1199px) {
+    #page-body { @include grid-fluid-span(7, $fluidGridColumnWidth, $fluidGridGutterWidth); }
+    #page-sidebar { @include grid-fluid-span(5, $fluidGridColumnWidth, $fluidGridGutterWidth); }
+}
+
+@media (min-width: 1200px) {
+    section:not(.main) > section { @include grid-fluid-span(6, $fluidGridColumnWidth1200, $fluidGridGutterWidth1200); }
+    #page-body { @include grid-fluid-span(8, $fluidGridColumnWidth1200, $fluidGridGutterWidth1200); }
+    #page-sidebar { @include grid-fluid-span(4, $fluidGridColumnWidth1200, $fluidGridGutterWidth1200); }
+}
