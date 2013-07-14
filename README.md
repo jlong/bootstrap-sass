@@ -20,11 +20,11 @@ Three quick start options are available:
 
 
 
-## SASS: Usage
+## Sass: Usage
 
-You can use the SASS Twitter Bootstrap by dropping the compiled CSS into any new project and start cranking.
+You can use the Sass Twitter Bootstrap by dropping the compiled CSS into any new project and start cranking.
 
-Because SASS always outputs standard css, just link to the final output like normal:
+Because Sass always outputs standard css, just link to the final output like normal:
 
 `<link rel="stylesheet" type="text/css" href="bootstrap-2.3.2.css">`
 
@@ -32,13 +32,13 @@ For more info, refer to the docs!
 
 
 
-## SASS: Basic modification
+## Sass: Basic modification
 
-You can learn more about SASS at:
+You can learn more about Sass at:
 
 [sass-lang.com](http://sass-lang.com)
 
-SASS runs as a local GEM on your system. You can run `sass --watch lib/bootstrap.scss:bootstrap-2.3.2.css`
+Sass runs as a local GEM on your system. You can run `sass --watch lib/bootstrap.scss:bootstrap-2.3.2.css`
 
 
 
@@ -77,9 +77,9 @@ Keep track of development and community news.
 
 
 
-## SASS: Developers
+## Sass: Developers
 
-We have included a Rakefile with convenience methods for working with the SASS Bootstrap library.
+We have included a Rakefile with convenience methods for working with the Sass Bootstrap library.
 
 + **build** - `rake build`
 This will run the less compiler on the bootstrap lib and regenerate the docs dir.
@@ -135,7 +135,7 @@ Thanks!
 
 
 
-## SASS: Conversion less to Sass
+## Sass: Conversion less to Sass
 
 The Twitter Bootstrap was lovingly converted to Sass by:
 
@@ -163,7 +163,7 @@ And [others](https://github.com/jlong/sass-twitter-bootstrap/contributors)
 
 
 
-## SASS: Conversion Quick Tips
+## Sass: Conversion Quick Tips
 
 * replace @ with $
 * replace . with @include for mixins
@@ -180,7 +180,7 @@ And [others](https://github.com/jlong/sass-twitter-bootstrap/contributors)
 
 
 
-## SASS: Installation via Composer
+## Sass: Installation via Composer
 
 If you already use Composer, the php dependency manager, installing
 sass-twitter-bootstrap is as simple as typing :
