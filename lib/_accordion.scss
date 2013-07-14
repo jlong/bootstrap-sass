@@ -12,14 +12,16 @@
 .accordion-group {
   margin-bottom: 2px;
   border: 1px solid #e5e5e5;
-  @include border-radius($baseBorderRadius);
+  @include border-radius;
 }
+
 .accordion-heading {
   border-bottom: 0;
-}
-.accordion-heading .accordion-toggle {
-  display: block;
-  padding: 8px 15px;
+
+  .accordion-toggle {
+    display: block;
+    padding: 8px 15px;
+  }
 }
 
 // General toggle styles
