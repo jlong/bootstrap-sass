@@ -74,25 +74,25 @@ module.exports = function(grunt) {
         compile: true
       },
       bootstrap: {
-        src: ['less/bootstrap.less'],
+        src: ['lib/bootstrap.scss'],
         dest: 'dist/css/<%= pkg.name %>.css'
       },
       min: {
         options: {
           compress: true
         },
-        src: ['less/bootstrap.less'],
+        src: ['lib/bootstrap.scss'],
         dest: 'dist/css/<%= pkg.name %>.min.css'
       },
       theme: {
-        src: ['less/theme.less'],
+        src: ['lib/_theme.scss'],
         dest: 'dist/css/<%= pkg.name %>-theme.css'
       },
       theme_min: {
         options: {
           compress: true
         },
-        src: ['less/theme.less'],
+        src: ['lib/_theme.scss'],
         dest: 'dist/css/<%= pkg.name %>-theme.min.css'
       }
     },
@@ -144,8 +144,24 @@ module.exports = function(grunt) {
         tasks: ['jshint:test', 'qunit']
       },
       recess: {
-        files: 'less/*.less',
+        files: 'lib/*.scss',
         tasks: ['recess']
+      }
+    },
+
+    sass: {
+      dev: {
+        files: {
+          'dist/css/bootstrap.css': 'lib/bootstrap.scss'
+        }
+      },
+      dist: {
+        options: {
+          style: 'compressed'
+        },
+        files: {
+          'dist/css/bootstrap.min.css': 'lib/bootstrap.scss'
+        }
       }
     }
   });
@@ -164,6 +180,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-jekyll');
   grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('browserstack-runner');
+  grunt.loadNpmTasks('grunt-contrib-sass');
 
   // Docs HTML validation task
   grunt.registerTask('validate-html', ['jekyll', 'validation']);
@@ -211,7 +228,11 @@ module.exports = function(grunt) {
     }
 
     var customize = fs.readFileSync('customize.html', 'utf-8')
-    var files = getFiles('js') + getFiles('less') + getFiles('fonts')
+    var files = getFiles('js') + getFiles('lib') + getFiles('fonts')
     fs.writeFileSync('assets/js/raw-files.js', files)
   });
+
+  // SASS task.
+  grunt.registerTask('default', ['sass']);
+
 };
