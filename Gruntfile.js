@@ -69,31 +69,22 @@ module.exports = function(grunt) {
       }
     },
 
-    recess: {
-      options: {
-        compile: true
-      },
+    sass: {
       bootstrap: {
-        src: ['less/bootstrap.less'],
-        dest: 'dist/css/<%= pkg.name %>.css'
+        options: { style: 'expanded' },
+        files: { 'dist/css/<%= pkg.name %>.css': 'lib/bootstrap.scss' }
       },
       min: {
-        options: {
-          compress: true
-        },
-        src: ['less/bootstrap.less'],
-        dest: 'dist/css/<%= pkg.name %>.min.css'
+        options: { style: 'compressed' },
+        files: { 'dist/css/<%= pkg.name %>.min.css': 'lib/bootstrap.scss' }
       },
       theme: {
-        src: ['less/theme.less'],
-        dest: 'dist/css/<%= pkg.name %>-theme.css'
+        options: { style: 'expanded' },
+        files: { 'dist/css/<%= pkg.name %>-theme.css': 'lib/_theme.scss' }
       },
       theme_min: {
-        options: {
-          compress: true
-        },
-        src: ['less/theme.less'],
-        dest: 'dist/css/<%= pkg.name %>-theme.min.css'
+        options: { style: 'compressed' },
+        files: { 'dist/css/<%= pkg.name %>-theme.min.css': 'lib/_theme.scss' }
       }
     },
 
@@ -143,9 +134,9 @@ module.exports = function(grunt) {
         files: '<%= jshint.test.src %>',
         tasks: ['jshint:test', 'qunit']
       },
-      recess: {
-        files: 'less/*.less',
-        tasks: ['recess']
+      sass: {
+        files: 'lib/*.scss',
+        tasks: ['sass']
       }
     }
   });
@@ -161,8 +152,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-html-validation');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-jekyll');
-  grunt.loadNpmTasks('grunt-recess');
   grunt.loadNpmTasks('browserstack-runner');
 
   // Docs HTML validation task
@@ -183,7 +174,10 @@ module.exports = function(grunt) {
   grunt.registerTask('dist-js', ['concat', 'uglify']);
 
   // CSS distribution task.
-  grunt.registerTask('dist-css', ['recess']);
+  grunt.registerTask('dist-css', ['sass']);
+
+  // SASS development watch task.
+  grunt.registerTask('watch-sass', ['watch:sass']);
 
   // Fonts distribution task.
   grunt.registerTask('dist-fonts', ['copy']);
@@ -195,7 +189,7 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['test', 'dist', 'build-customizer']);
 
   // task for building customizer
-  grunt.registerTask('build-customizer', 'Add scripts/less files to customizer.', function () {
+  grunt.registerTask('build-customizer', 'Add scripts/sass files to customizer.', function () {
     var fs = require('fs')
 
     function getFiles(type) {
@@ -211,7 +205,7 @@ module.exports = function(grunt) {
     }
 
     var customize = fs.readFileSync('customize.html', 'utf-8')
-    var files = getFiles('js') + getFiles('less') + getFiles('fonts')
+    var files = getFiles('js') + getFiles('scss') + getFiles('fonts')
     fs.writeFileSync('assets/js/raw-files.js', files)
   });
 };
