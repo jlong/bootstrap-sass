@@ -549,6 +549,15 @@ $well-bg:                     #f5f5f5 !default;
 
 // Badges
 // -------------------------
+
+$badge-default-bg:            $gray-light !default;
+$badge-primary-bg:            $brand-primary !default;
+$badge-success-bg:            $brand-success !default;
+$badge-info-bg:               $brand-info !default;
+$badge-warning-bg:            $brand-warning !default;
+$badge-danger-bg:             $brand-danger !default;
+$badge-inverse-bg:            $gray-dark !default;
+
 $badge-color:                 #fff !default;
 $badge-link-hover-color:      #fff !default;
 $badge-bg:                    $gray-light !default;

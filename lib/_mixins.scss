@@ -531,9 +531,9 @@
   }
 }
 
-// Labels
+// Labels and Badges
 // -------------------------
-@mixin label-variant($color) {
+@mixin color-variant($color) {
   background-color: $color;
   &[href] {
     &:hover,
